@@ -15,3 +15,7 @@ body{
 .titulos{
   font-family: var(--fuenteRoboto); 
 }
+
+.texto{
+  font-family: var(--fuenteMontserrat); 
+}
