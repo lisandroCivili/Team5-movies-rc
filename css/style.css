@@ -21,6 +21,10 @@ body{
 #imgPeliculaDestacada{
   filter: brightness(50%)
 }
+.modal-content{
+  background-color: var(--color4);
+}
+
 @media screen and (max-width: 575px){
   #nombreNavbar{
     display: none;

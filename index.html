@@ -30,52 +30,58 @@
 
           <div id="botonesLogeo" class="btn-group ms-5">
             <a href="#" id="logIn" class="btn btn-primary fw-medium">Log in</a>
-            <a href="#" id="signIn" class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign in</a>
+            <a href="#" id="signIn" class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#modalLogin">Sign in</a>
           </div>
 
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nompreApellido" placeholder="Nombre y apellido">
-                    <label for="nompreApellido">Nombre y apellido</label>
+                <form id="registroForm">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLoginLabel">Registro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com">
-                    <label for="correo">Email</label>
+                  <div class="modal-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="nombre" minlength="3" maxlength="15" required placeholder="Nombre y apellido">
+                      <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="apellido" minlength="2" maxlength="25" required placeholder="Nombre y apellido">
+                      <label for="apellido">Apellido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="correo" minlength="15" maxlength="50" required placeholder="nombre@ejemplo.com">
+                      <label for="correo">Email</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="contrasena" minlength="8" maxlength="20" required placeholder="Contraseña">
+                      <label for="contrasena">Contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="repetirContrasena" minlength="8" maxlength="20" required placeholder="Contraseña">
+                      <label for="repetirContrasena">Repetir contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="date" class="form-control" id="fechaNac" required placeholder="Contraseña">
+                      <label for="fechaNac">Fecha de nacimiento</label>
+                    </div>
+                    <select id="genero" class="form-select" aria-label="Default select" required>
+                      <option selected>Género:</option>
+                      <option value="1">Femenino</option>
+                      <option value="2">Masculino</option>
+                      <option value="3">Otro</option>
+                    </select>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
                   </div>
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
-                    <label for="contraseña">Contraseña</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="repetirContraseña" placeholder="Contraseña">
-                    <label for="repetirContraseña">Repetir contraseña</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="fechaNac" placeholder="Contraseña">
-                    <label for="fechaNac">Repetir contraseña</label>
-                  </div>
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Género:</option>
-                    <option value="1">Femenino</option>
-                    <option value="2">Masculino</option>
-                    <option value="3">Otro</option>
-                  </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Registrarse</button>
-                </div>
+                </form>
               </div>
             </div>
           </div>
-
+          
           <button
             class="navbar-toggler"
             type="button"
@@ -321,8 +327,6 @@
                   <i class="bi bi-linkedin fs-3"></i>
                 </a>
               </div>
-            </div>
-          </div>
         </div>
       </footer>
     <script
@@ -330,5 +334,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="js/crearUsuario.js" type="module"></script>
   </body>
 </html>
