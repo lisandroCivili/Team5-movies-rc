@@ -24,7 +24,11 @@ body{
 .modal-content{
   background-color: var(--color4);
 }
-
+.imgCarrusel{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 @media screen and (max-width: 575px){
   #nombreNavbar{
     display: none;
