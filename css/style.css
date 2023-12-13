@@ -219,3 +219,24 @@ body{
     width: 50%;
   }
 }
+
+
+.modal-footer{
+  background-color: var(--color1);
+  color: var(--color4);
+}
+.icons-md{
+  font-size: 30px;
+}
+.icons-xl{
+  font-size: 100px;
+}
+.titulo-principal{
+  font-family: var(--fuenteRoboto);
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+}
