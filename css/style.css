@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
-:root{
-  --color1:#092635;
-  --color2:#1B4242;
-  --color3:#5C8374;
-  --color4:#9EC8B9;
-  --fuenteRoboto:Roboto;
-  --fuenteMontserrat: Montserrat;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+:root {
+    --color1: #092635;
+    --color2: #1b4242;
+    --color3: #5c8374;
+    --color4: #9ec8b9;
+    --fuenteRoboto: Roboto;
+    --fuenteMontserrat: Montserrat;
 }
 
-body{
-  /* esto es de ejemplo como se usa despues lo borran*/
-  background-color: var(--color3);
+body {
+    /* esto es de ejemplo como se usa despues lo borran*/
+    background-color: var(--color1);
+    margin: 0%;
 }
-.titulos{
-  font-family: var(--fuenteRoboto); 
+.titulos {
+    font-family: var(--fuenteRoboto);
 }
