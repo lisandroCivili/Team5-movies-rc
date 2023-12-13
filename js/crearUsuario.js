@@ -1,5 +1,5 @@
 import UsuarioNuevo from "./classUsuarioNuevo.js";
-import { validarLargo, validarMail, validarContra, validarRepetirContra, validarFechaNach } from "./validacionSigin.js";
+import { validarLargo, validarMail, validarContra, validarRepetirContra} from "./validacionSigin.js";
 
 const formularioSignin = document.getElementById('registroForm');
 const nombre = document.getElementById('nombre'),
@@ -10,8 +10,7 @@ const nombre = document.getElementById('nombre'),
       fechaNac = document.getElementById('fechaNac'),
       genero = document.getElementById('genero');
      
-const usuariosNuevos = [];
-// const usuariosNuevos = JSON.parse(localStorage.getItem('usuarioNuevoKey')) || [];
+const usuariosNuevos = JSON.parse(localStorage.getItem('usuarioNuevoKey')) || [];
       
 nombre.addEventListener('input', ()=>{validarLargo(nombre, 3, 35)});
 apellido.addEventListener('input', ()=>{validarLargo(apellido, 3, 35)});
@@ -22,11 +21,20 @@ repetirContra.addEventListener('input', ()=>{validarRepetirContra(repetirContra)
 const crearContacto = (e) =>{
     e.preventDefault();            
     console.log(usuariosNuevos)
-    const nuevoUsuario = new UsuarioNuevo(nombre.value, apellido.value, correo.value, contrasena.value, repetirContra.value, genero.value, cambiarFormatoFecha(fechaNac.value));
-    usuariosNuevos.push(nuevoUsuario);
-    console.log(usuariosNuevos);
-    guardarLocalStorage();
-    resetearForm();
+    if (nombre.addEventListener('input', ()=>{validarLargo(nombre, 3, 35)})&&
+    apellido.addEventListener('input', ()=>{validarLargo(apellido, 3, 35)})&&
+    correo.addEventListener('input', ()=>{validarMail(correo)})&&
+    contrasena.addEventListener('input', ()=>{validarContra(contrasena)})&&
+    repetirContra.addEventListener('input', ()=>{validarRepetirContra(repetirContra)})) {
+        
+        const nuevoUsuario = new UsuarioNuevo(nombre.value, apellido.value, correo.value, contrasena.value, repetirContra.value, genero.value, cambiarFormatoFecha(fechaNac.value));
+        usuariosNuevos.push(nuevoUsuario);
+        console.log(usuariosNuevos);
+        guardarLocalStorage();
+        resetearForm();
+    }else{
+        alert('nao nao')
+    }
 }
 
 function cambiarFormatoFecha(fecha) {
