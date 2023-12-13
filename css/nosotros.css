@@ -104,31 +104,20 @@ body {
 }
 
 @media only screen and (max-width: 380px) {
-    .bgCirclesContainer .circle {
-        height: 200px;
-        width: 200px;
+    .nosotrosTextContainer {
+        width: 90%;
+        margin: 6rem auto 5rem;
     }
-    /* separate circles */
-    .bgCirclesContainer .circle:nth-of-type(1) {
-        right: -35%;
-        top: -8%;
+
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5rem;
     }
-    .bgCirclesContainer .circle:nth-of-type(2) {
-        bottom: -18%;
-        left: -15%;
-    }
-    .bgCirclesContainer .circle:nth-of-type(3) {
-        background-color: var(--color2);
-        bottom: -18%;
-        left: 20%;
-    }
-    .bgCirclesContainer .circle:nth-of-type(4) {
-        bottom: -18%;
-        left: initial;
-        right: -15%;
-    }
-}
-@media only screen and (min-width: 381px) and (max-width: 600px) {
+
     .bgCirclesContainer .circle {
         height: 300px;
         width: 300px;
@@ -136,24 +125,76 @@ body {
     /* separate circles */
     .bgCirclesContainer .circle:nth-of-type(1) {
         right: -40%;
-        top: -12%;
+        top: -8%;
     }
     .bgCirclesContainer .circle:nth-of-type(2) {
-        bottom: -28%;
-        left: -15%;
+        left: -55%;
+        top: 26%;
+        opacity: 70%;
     }
     .bgCirclesContainer .circle:nth-of-type(3) {
         background-color: var(--color2);
-        bottom: -28%;
-        left: 20%;
+        bottom: -5%;
+        left: -40%;
     }
     .bgCirclesContainer .circle:nth-of-type(4) {
-        bottom: -28%;
-        left: initial;
-        right: -15%;
+        bottom: -8%;
+        left: 7%;
+    }
+}
+@media only screen and (min-width: 381px) and (max-width: 600px) {
+    .nosotrosTextContainer {
+        width: 85%;
+        margin: 6rem auto 5rem;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
+
+    .bgCirclesContainer .circle {
+        height: 300px;
+        width: 300px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -40%;
+        top: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        left: -45%;
+        top: 22%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -40%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -8%;
+        left: 7%;
     }
 }
 @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .nosotrosTextContainer {
+        width: 70%;
+        margin: 6rem auto 5rem;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
+
     .bgCirclesContainer .circle {
         height: 300px;
         width: 300px;
@@ -161,23 +202,37 @@ body {
     /* separate circles */
     .bgCirclesContainer .circle:nth-of-type(1) {
         right: -30%;
-        top: 0%;
+        top: -5%;
     }
     .bgCirclesContainer .circle:nth-of-type(2) {
-        bottom: 0%;
-        left: -20%;
+        left: -35%;
+        top: 20%;
     }
     .bgCirclesContainer .circle:nth-of-type(3) {
         background-color: var(--color2);
-        bottom: -15%;
+        bottom: -5%;
         left: -8%;
     }
     .bgCirclesContainer .circle:nth-of-type(4) {
-        bottom: -30%;
+        bottom: -10%;
         left: 8%;
     }
 }
 @media only screen and (min-width: 901px) and (max-width: 1024px) {
+    .nosotrosTextContainer {
+        width: 65%;
+        margin: 6rem auto 5rem;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
+
     .bgCirclesContainer .circle {
         height: 300px;
         width: 300px;
@@ -188,8 +243,40 @@ body {
         top: 0%;
     }
     .bgCirclesContainer .circle:nth-of-type(2) {
-        bottom: 0%;
         left: -11%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -10%;
+        left: 8%;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 85%;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
+
+    .bgCirclesContainer .circle {
+        height: 400px;
+        width: 400px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -20%;
+        top: 25%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        top: -10%;
+        left: -21%;
     }
     .bgCirclesContainer .circle:nth-of-type(3) {
         background-color: var(--color2);
@@ -197,13 +284,7 @@ body {
         left: -8%;
     }
     .bgCirclesContainer .circle:nth-of-type(4) {
-        bottom: -30%;
-        left: 8%;
-    }
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-    .bgCirclesContainer .circle {
-        height: 400px;
-        width: 400px;
+        bottom: -20%;
+        left: 0%;
     }
 }
