@@ -1,19 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link  href="./css/style.css" rel="stylesheet">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+        <div id="contenedorNav" class="container-fluid categorias p-2">
+          <img
+            src="./img/logoIA.png"
+            alt="Logo"
+            width="70"
+            height="70"
+            id="logoNavbar"
+            class="d-inline-block align-items-center"
+          />
 
-  
-  <h1 class="titulos">Titulo de prueba</h1>
+          <a id="nombreNavbar" class="navbar-brand" href="#">Rolling Movies</a>
 
+          <div id="botonesLogeo" class="btn-group ms-5">
+            <a href="#" id="logIn" class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</a>
+            <a href="#" id="signIn" class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#modalLogin">Sign in</a>
+          </div>
 
+          <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form id="registroForm">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLoginLabel">Registro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="nombre" minlength="3" maxlength="15" required placeholder="Nombre y apellido">
+                      <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="apellido" minlength="2" maxlength="25" required placeholder="Nombre y apellido">
+                      <label for="apellido">Apellido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="correo" minlength="15" maxlength="50" required placeholder="nombre@ejemplo.com">
+                      <label for="correo">Email</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="contrasena" minlength="8" maxlength="20" required placeholder="Contraseña">
+                      <label for="contrasena">Contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="repetirContrasena" minlength="8" maxlength="20" required placeholder="Contraseña">
+                      <label for="repetirContrasena">Repetir contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="date" class="form-control" id="fechaNac" required placeholder="Contraseña">
+                      <label for="fechaNac">Fecha de nacimiento</label>
+                    </div>
+                    <select id="genero" class="form-select" aria-label="Default select" required>
+                      <option selected>Género:</option>
+                      <option value="1">Femenino</option>
+                      <option value="2">Masculino</option>
+                      <option value="3">Otro</option>
+                    </select>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#botonesNav"
+            aria-controls="botonesNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+          <div class="collapse navbar-collapse" id="botonesNav">
+            <ul id="opcionesMenu" class="navbar-nav ms-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link active p-2 my-1 fw-medium opcionesNav" aria-current="page" href="#"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <div class="modal fade modal-lg" id="loginModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+             
+              <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+           
+              <div class="row">                
+                <div class="col-lg-6 d-none d-lg-block">
+                  <img src="./img/logoIA.png" class="img-fluid" alt="Imagen">
+                </div>
+                <div class="col-lg-6 col-12">
+                  <form>
+                    <h2 class="titulo-principal">Login</h2>
+                    <div class="text-center mt-3 mb-3">
+                      <i class="fa-solid fa-circle-user icons-xl"></i>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputUsuario">Usuario</label>
+                      <input type="text" class="form-control" id="inputUsuario" placeholder="Ingrese su usuario">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword">Contraseña</label>
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="form-check mt-3">
+                      <input type="checkbox" class="form-check-input" id="checkRecuerdame">
+                      <label class="form-check-label" for="checkRecuerdame">Recuérdame</label>
+                    </div>
+                    <div class="text-center mt-3">
+
+                      <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="container d-flex justify-content-between align-items-center">
+                <div class="text-start">© 2023 Copyright - 2023</div>
+                <div class="text-end icons-md d-none d-md-block" >             
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+                                            <!-- SECTOR PELICULA DESTACADA -->
+      <section id="sectorPeliculaDestacada" class="d-flex align-items-center">
+        <div id="peliculaDestacada">
+          <img
+            src="./img/peliculaDestacada.jpg"
+            id="imgPeliculaDestacada"
+          />
+        </div>
+        <div id="textoImgDestacada">
+          <h1 class="titulos text-end text-white m-0">INTERESTELLAR</h1>
+          <h4 id="tendencias" class="text-end text-white"><i class="bi bi-arrow-up-circle-fill"></i> N° 1 en tendencias hoy</h4>
+          <p id="resumenImgDestacada" class="text-end text-white">
+            Sigue a astronautas en busca de un nuevo hogar para la humanidad
+            debido a la crisis ambiental en la Tierra. Dirigida por
+            Christopher Nolan, la película combina ciencia ficción, efectos
+            visuales impresionantes y temas emocionales.
+          </p>
+          <div class="text-lg-center">
+              <button type="button" id="reproducirDestacada" class="btn btn btn-outline-light"><i class="bi bi-badge-hd-fill"></i> Reproducir</button>
+              <button type="button" id="informacionDestacada" class="btn btn btn-outline-light">Mas información</button>
+          </div>
+        </div>
+      </section>
+                                                    <!-- SECTOR CATEGORIAS -->
+      <section id="seccionCategorias">
+        <article>
+            <nav class="navbar bg-body-tertiary p-0">
+                <div class="container-fluid categorias p-2">
+                  <h2 class="navbar-brand mb-0 titulos">Drama</h2>
+                </div>
+            </nav>
+            <div id="portadasDrama" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner h-100">
+                  <div class="portadasCarrusel carousel-item active text-lg-center">
+                    <img src="./img/portadas/whiplash.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/en-busca-de-la-felicidad.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/el-renacido.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/ventajas-de-ser-invisible.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/red-social.webp" class="portadas " alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portadasDrama" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portadasDrama" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </article>
+        <article>
+            <nav class="navbar bg-body-tertiary p-0">
+                <div class="container-fluid categorias p-2">
+                  <h2 class="navbar-brand mb-0 titulos">Accion</h2>
+                </div>
+            </nav>
+            <div id="portadasAccion" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner h-100">
+                  <div class="portadasCarrusel carousel-item active text-lg-center">
+                    <img src="./img/portadas/whiplash.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/en-busca-de-la-felicidad.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/el-renacido.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/ventajas-de-ser-invisible.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/red-social.webp" class="portadas " alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portadasAccion" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portadasAccion" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </article>
+        <article>
+            <nav class="navbar bg-body-tertiary p-0">
+                <div class="container-fluid categorias p-2">
+                  <h2 class="navbar-brand mb-0 titulos">Comedia</h2>
+                </div>
+            </nav>
+            <div id="portadasComedia" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner h-100">
+                  <div class="portadasCarrusel carousel-item active text-lg-center">
+                    <img src="./img/portadas/whiplash.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/en-busca-de-la-felicidad.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/el-renacido.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/ventajas-de-ser-invisible.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/red-social.webp" class="portadas " alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portadasComedia" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portadasComedia" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </article>
+        <article>
+            <nav class="navbar bg-body-tertiary p-0">
+                <div class="container-fluid categorias p-2">
+                  <h2 class="navbar-brand mb-0 titulos">Ciencia Ficcion</h2>
+                </div>
+            </nav>
+            <div id="portadasCiFi" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner h-100">
+                  <div class="portadasCarrusel carousel-item active text-lg-center">
+                    <img src="./img/portadas/whiplash.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/en-busca-de-la-felicidad.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/el-renacido.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/ventajas-de-ser-invisible.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/red-social.webp" class="portadas " alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portadasCiFi" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portadasCiFi" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </article>
+        <article>
+            <nav class="navbar bg-body-tertiary p-0">
+                <div class="container-fluid categorias p-2">
+                  <h2 class="navbar-brand mb-0 titulos">Thriller</h2>
+                </div>
+            </nav>
+            <div id="portadasThriller" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner h-100">
+                  <div class="portadasCarrusel carousel-item active text-lg-center">
+                    <img src="./img/portadas/whiplash.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/en-busca-de-la-felicidad.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/el-renacido.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/ventajas-de-ser-invisible.webp" class="portadas " alt="...">
+                  </div>
+                  <div class="portadasCarrusel carousel-item text-lg-center">
+                    <img src="./img/portadas/red-social.webp" class="portadas " alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portadasThriller" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portadasThriller" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </article>
+        
+      </section>
+    </main>
+    <footer class="color text-light pt-4 z-3">
+        <div class="container">
+              <p class="text-center">Seguinos en nuetras redes</p>
+              <div class="text-center">
+                <a href="#" class="link-secondary">
+                  <i class="bi bi-instagram fs-3"></i
+                ></a>
+                <a href="#" class="link-secondary mx-4">
+                  <i class="bi bi-facebook fs-3"></i
+                ></a>
+                <a href="#" class="link-secondary">
+                  <i class="bi bi-linkedin fs-3"></i>
+                </a>
+              </div>
+        </div>
+      </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/crearUsuario.js" type="module"></script>
+  </body>
 </html>
