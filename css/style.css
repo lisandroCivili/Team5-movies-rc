@@ -10,10 +10,11 @@
 
 body{
   /* esto es de ejemplo como se usa despues lo borran */
-  background-color: var(--color4);
+  background-color: var(--color1);
 }
 .titulos{
   font-family: var(--fuenteRoboto); 
+  color: white;
 }
 #botonesNav, #contenedorNav{
   background-color: var(--color1);
@@ -221,5 +222,8 @@ body{
   .portadas{
     height: 100%;
     width: 50%;
+  } 
+  .categorias{
+    background-color: var(--color1);
   }
 }
