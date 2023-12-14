@@ -126,18 +126,18 @@
                   <img src="./img/logoIA.png" class="img-fluid" alt="Imagen">
                 </div>
                 <div class="col-lg-6 col-12">
-                  <form>
+                  <form id="frmLogin">
                     <h2 class="titulo-principal">Login</h2>
                     <div class="text-center mt-3 mb-3">
                       <i class="fa-solid fa-circle-user icons-xl"></i>
                     </div>
                     <div class="form-group">
                       <label for="inputUsuario">Usuario</label>
-                      <input type="text" class="form-control" id="inputUsuario" placeholder="Ingrese su usuario">
+                      <input type="text" class="form-control" id="usuario"  name='usuario' placeholder="Ingrese su usuario">
                     </div>
                     <div class="form-group">
                       <label for="inputPassword">Contraseña</label>
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Ingrese su contraseña">
+                      <input type="password" class="form-control" id="password" name='password' placeholder="Ingrese su contraseña">
                     </div>
                     <div class="form-check mt-3">
                       <input type="checkbox" class="form-check-input" id="checkRecuerdame">
@@ -389,5 +389,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/crearUsuario.js" type="module"></script>
+    <script src="js/appLogin.js" ></script>
   </body>
 </html>
