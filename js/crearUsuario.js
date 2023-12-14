@@ -32,8 +32,6 @@ const crearContacto = (e) =>{
         console.log(usuariosNuevos);
         guardarLocalStorage();
         resetearForm();
-    }else{
-        alert('nao nao')
     }
 }
 
