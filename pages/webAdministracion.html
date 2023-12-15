@@ -144,6 +144,97 @@
           </div>
         </div>
       </section>
+      <div class="d-flex align-items-center justify-content-between">
+        <h1>Administrar Productos</h1>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalContacto"
+          id="btnNuevoContacto"
+        >
+          Nuevo contacto
+        </button>
+      </div>
+      <section class="table-responsive mt-4">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Email</th>
+              <th scope="col">Celular</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaContacto">
+            
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <div
+      class="modal"
+      id="modalContacto"
+      tabindex="-1"
+      aria-labelledby="modalContactoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registrar contacto</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombres</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  class="form-control"
+                  placeholder="Ej: Juan perez"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellidos</label>
+                <input
+                  type="text"
+                  id="apellido"
+                  class="form-control"
+                  placeholder="Ej: Juan perez"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="text"
+                  id="email"
+                  class="form-control"
+                  placeholder="Ej: Juan perez"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  placeholder="Ej: Juan perez"
+                />
+              </div>
+              <button class="btn btn-primary" type="submit">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <footer class="color text-light pt-4 z-3">
     <div class="container">
