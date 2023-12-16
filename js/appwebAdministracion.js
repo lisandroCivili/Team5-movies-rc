@@ -1,44 +1,41 @@
-import Contacto from "./classContacto.js";
+import Pelicula from "./classPelicula.js";
 
 //declaro variables
-const formularioContacto = document.querySelector("form");
+const formularioPelicula = document.querySelector("form");
 const nombre = document.querySelector("#nombrepeli"),
-  apellido = document.querySelector("#apellido"),
-  email = document.querySelector("#email"),
-  telefono = document.querySelector("#telefono");
-const agenda = JSON.parse(localStorage.getItem("agendaKey")) || [];
+  categoria = document.querySelector("#categoria"),
+  descripcion = document.querySelector("#descripcion");
+const catalogo = JSON.parse(localStorage.getItem("catalogoKey")) || [];
 
 //funciones
-const crearContacto = (e) => {
+const crearPelicula = (e) => {
   e.preventDefault();
-  console.log("desde la funcion que crea los contactos");
+  console.log("desde la funcion que crea los Peliculas");
   //en el evento submit
   //preventDefault
   //tomo los datos de los inputs (validar)
   if (
-    validarCantidadCaracteres(nombre.value, 3, 25) &&
-    validarCantidadCaracteres(apellido.value, 2, 35) &&
-    validarEmail(email.value)
+    validarCantidadCaracteres(nombre.value, 1, 35) &&
+    validarCantidadCaracteres(categoria.value, 2, 20) 
   ) {
     //crear un objeto
-    const nuevoContacto = new Contacto(
+    const nuevaPelicula = new Pelicula(
       nombre.value,
-      apellido.value,
-      email.value,
-      telefono.value
+      categoria.value,
+      descripcion.value
     );
     //guardo el objeto en un array
-    agenda.push(nuevoContacto);
-    console.log(agenda);
-    limpiarFormularioContacto();
+    catalogo.push(nuevaPelicula);
+    console.log(catalogo);
+    limpiarFormularioPelicula();
     //guardar el array en el localstorage JSON
     guardarEnLocalstorage();
     //dibujar una fila en la tabla
-    dibujarFila(nuevoContacto, agenda.length);
+    dibujarFila(nuevaPelicula, catalogo.length);
     
     Swal.fire({
-      title: "Contacto creado",
-      text: `El contacto ${nuevoContacto.nombre}, ${nuevoContacto.apellido} fue creado exitosamente`,
+      title: "Pelicula creada",
+      text: `La Pelicula ${nuevaPelicula.nombre} fue creada exitosamente`,
       icon: "success"
     });
   } else {
@@ -46,60 +43,62 @@ const crearContacto = (e) => {
   }
 };
 
-const limpiarFormularioContacto = () => {
-  formularioContacto.reset();
+const limpiarFormularioPelicula = () => {
+  formularioPelicula.reset();
 };
 
 const guardarEnLocalstorage = () => {
-  localStorage.setItem("agendaKey", JSON.stringify(agenda));
+  localStorage.setItem("catalogoKey", JSON.stringify(catalogo));
 };
 
-const dibujarFila = (contacto, numeroFila) => {
-  const tablaContactos = document.getElementById("tablaContacto");
-  tablaContactos.innerHTML += `<tr>
+const dibujarFila = (Pelicula, numeroFila) => {
+  const tablaPeliculas = document.getElementById("tablaPelicula");
+  tablaPeliculas.innerHTML += `<tr>
   <th scope="row">${numeroFila}</th>
-  <td>${contacto.nombre}</td>
-  <td>${contacto.apellido}</td>
-  <td>${contacto.email}</td>
-  <td>${contacto.telefono}</td>
+  <td>${Pelicula.nombre}</td>
+  <td>${Pelicula.categoria}</td>
+  <td>${Pelicula.descripcion}</td>
+  <td><div class="checkbox text-center">
+  <input type="checkbox" id="cbox${numeroFila}" />
+</div></td>
   <td>
-    <button class="btn btn-primary" onclick="detalleContacto('${contacto.id}')">Ver mas</button>
-    <button class="btn btn-warning">Editar</button>
-    <button class="btn btn-danger" onclick="borrarContacto('${contacto.id}')">Borrar</button>
+    <button class="btn btn-primary" onclick="detallePelicula('${Pelicula.id}')"><i class="bi bi-star-fill"></i></button>
+    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+    <button class="btn btn-danger" onclick="borrarPelicula('${Pelicula.id}')"><i class="bi bi-trash-fill"></i></button>
   </td>
 </tr>`;
 };
 
 const cargaInicial = () => {
-  //preguntar si la agenda tiene elementos
-  if (agenda.length > 0) {
-    agenda.map((itemContacto, posicionContacto) =>
-      dibujarFila(itemContacto, posicionContacto + 1)
+  //preguntar si la catalogo tiene elementos
+  if (catalogo.length > 0) {
+    catalogo.map((itemPelicula, posicionPelicula) =>
+      dibujarFila(itemPelicula, posicionPelicula + 1)
     );
   }
 };
 
-window.borrarContacto = (idContacto) => {
-  console.log(idContacto);
+window.borrarPelicula = (idPelicula) => {
+  console.log(idPelicula);
   //buscar la posicion del elemento en el array findIndex
-  const posicionContactoBuscado = agenda.findIndex(
-    (itemContacto) => itemContacto.id === idContacto
+  const posicionPeliculaBuscado = catalogo.findIndex(
+    (itemPelicula) => itemPelicula.id === idPelicula
   );
-  console.log(posicionContactoBuscado);
-  //borrar el contacto de la agenda usando splice(posicion, cant de elementos a borrar)
-  agenda.splice(posicionContactoBuscado, 1);
+  console.log(posicionPeliculaBuscado);
+  //borrar la Pelicula de catalogo usando splice(posicion, cant de elementos a borrar)
+  catalogo.splice(posicionPeliculaBuscado, 1);
   //actualizar localstorage
   guardarEnLocalstorage();
   //borrar la fila de la tabla
-  const tablaContactos = document.getElementById("tablaContacto");
-  tablaContactos.innerHTML = "";
+  const tablaPeliculas = document.getElementById("tablaPelicula");
+  tablaPeliculas.innerHTML = "";
   cargaInicial();
 };
 
-window.detalleContacto = (idContacto) => {
+window.detallePelicula = (idPelicula) => {
   console.log(window.location);
   window.location.href =
-    window.location.origin + "/pages/detalleContacto.html?id=" + idContacto;
+    window.location.origin + "/pages/detallePelicula.html?id=" + idPelicula;
 };
 
 const validarCantidadCaracteres = (texto, min, max) => {
@@ -112,17 +111,8 @@ const validarCantidadCaracteres = (texto, min, max) => {
   }
 };
 
-const validarEmail = (texto) => {
-  const patron =
-    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-  if (patron.test(texto)) {
-    return true;
-  } else {
-    return false;
-  }
-};
 
 //resto de la logica
-formularioContacto.addEventListener("submit", crearContacto);
+formularioPelicula.addEventListener("submit", crearPelicula);
 
 cargaInicial();

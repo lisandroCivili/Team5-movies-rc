@@ -17,6 +17,14 @@ body {
     font-family: var(--fuenteRoboto);
   color: white;
 }
+table, td{
+  border: 1px solid var(--color1);
+  text-align: center;
+}
+
+td{
+  padding: 7px;
+}
 #botonesNav, #contenedorNav{
   background-color: var(--color1);
 }
