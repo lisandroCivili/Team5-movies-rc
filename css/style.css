@@ -50,6 +50,9 @@ td{
     height: 30vh;
     z-index: 1;
   }
+  #titulotabla{
+    margin-top: 50px;
+  }
 
   #imgPeliculaDestacada{
     width: 100%; 
@@ -103,6 +106,9 @@ td{
 @media screen and (min-width: 576px) and (max-width: 991px) {
   #nombreNavbar {
     display: none;
+  }
+  #titulotabla{
+    margin-top: 200px;
   }
 
   #botonesNav li {
@@ -189,6 +195,9 @@ td{
   }
   #nombreNavbar, #opcionesMenu a{
     color: white;
+  }
+  #titulotabla{
+    margin-top: 20px;
   }
   #opcionesMenu li{
     background-color: #9ec8b983;
