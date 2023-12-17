@@ -52,7 +52,7 @@ const resetearForm = () =>{
     formularioSignin.reset();
 }
 
-const guardarLocalStorage = ()=>{
-    localStorage.setItem('usuarioNuevoKey', JSON.stringify(usuariosNuevos));
+const guardarLocalStorage = ()=>{   
+    localStorage.setItem('usuarioNuevoKey', JSON.stringify(usuariosNuevos));    
 }
 formularioSignin.addEventListener('submit', crearContacto);
