@@ -9,7 +9,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="../css/contacto.css" rel="stylesheet" />
+    <link href="./css/styleContacto.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -50,7 +50,7 @@
           </div>
           <!-- aqui empieza el formulario -->
           <div class="col-md-6 col-lg-6 texto">
-            <form>
+            <form class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="nombreContacto" class="form-label">Nombre</label>
                 <input
@@ -62,6 +62,8 @@
                   maxlength="50"
                   required
                 />
+                <div class="valid-feedback">Todo bien✅</div>
+                <div class="invalid-feedback">Debe ingresar nombre y apellido</div>
               </div>
               <div class="mb-3">
                 <label for="mailContacto" class="form-label">Email</label>
@@ -83,14 +85,15 @@
                   type="tel"
                   class="form-control formLogin"
                   id="telContacto"
-                  min="3999999999"
-                  max="3999999999"
+                  pattern="[0-9]{10}"
                   placeholder="Ej: 3815645887"
                 />
+                <div class="valid-feedback">Todo bien✅</div>
+                <div class="invalid-feedback">El número debe contener 10 dígitos</div>
               </div>
               <div class="mb-3">
                 <label for="telContacto" class="form-label"
-                  >Comentario (Opcional)</label
+                  >Comentario</label
                 >
                 <textarea
                   id=""
@@ -99,6 +102,7 @@
                   minlength="10"
                   maxlength="200"
                   placeholder="Ingrese su comentario aquí"
+                  required
                 ></textarea>
               </div>
               <div class="mb-3 form-check w-100">
@@ -106,6 +110,7 @@
                   type="checkbox"
                   class="form-check-input"
                   id="checkNoSoyUnRobot"
+                  required
                 />
                 <label class="form-check-label" for="checkNoSoyUnRobot"
                   >No soy un robot 🤖</label
@@ -123,7 +128,7 @@
         </div>
       </section>
     </main>
-    <script src="../js/contacto.js"></script>
+    <script src="./JS/contacto.js"></script>
     <script
       src="https://kit.fontawesome.com/067bdf62dd.js"
       crossorigin="anonymous"
