@@ -8,13 +8,13 @@
     --fuenteMontserrat: Montserrat;
 }
 
-body{
-  /* esto es de ejemplo como se usa despues lo borran */
-  background-color: var(--color1);
-  margin: 0%;
+body {
+    /* esto es de ejemplo como se usa despues lo borran*/
+    background-color: var(--color1);
+    margin: 0%;
 }
-.titulos{
-  font-family: var(--fuenteRoboto); 
+.titulos {
+    font-family: var(--fuenteRoboto);
   color: white;
 }
 #botonesNav, #contenedorNav{

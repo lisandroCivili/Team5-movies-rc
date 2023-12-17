@@ -21,11 +21,11 @@ repetirContra.addEventListener('input', ()=>{validarRepetirContra(repetirContra)
 const crearContacto = (e) =>{
     e.preventDefault();            
     console.log(usuariosNuevos)
-    if (nombre.addEventListener('input', ()=>{validarLargo(nombre, 3, 35)})&&
-    apellido.addEventListener('input', ()=>{validarLargo(apellido, 3, 35)})&&
-    correo.addEventListener('input', ()=>{validarMail(correo)})&&
-    contrasena.addEventListener('input', ()=>{validarContra(contrasena)})&&
-    repetirContra.addEventListener('input', ()=>{validarRepetirContra(repetirContra)})) {
+    if (validarLargo(nombre, 3, 35) &&
+    validarLargo(apellido, 3, 35) &&
+    validarMail(correo) &&
+    validarContra(contrasena) &&
+    validarRepetirContra(repetirContra)) {
         
         const nuevoUsuario = new UsuarioNuevo(nombre.value, apellido.value, correo.value, contrasena.value, repetirContra.value, genero.value, cambiarFormatoFecha(fechaNac.value));
         usuariosNuevos.push(nuevoUsuario);
