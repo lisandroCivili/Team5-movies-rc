@@ -10,7 +10,7 @@ const catalogo = JSON.parse(localStorage.getItem("catalogoKey")) || [];
 //funciones
 const crearPelicula = (e) => {
   e.preventDefault();
-  console.log("desde la funcion que crea los Peliculas");
+  
   //en el evento submit
   //preventDefault
   //tomo los datos de los inputs (validar)
@@ -26,7 +26,7 @@ const crearPelicula = (e) => {
     );
     //guardo el objeto en un array
     catalogo.push(nuevaPelicula);
-    console.log(catalogo);
+    
     limpiarFormularioPelicula();
     //guardar el array en el localstorage JSON
     guardarEnLocalstorage();
@@ -79,12 +79,12 @@ const cargaInicial = () => {
 };
 
 window.borrarPelicula = (idPelicula) => {
-  console.log(idPelicula);
+  
   //buscar la posicion del elemento en el array findIndex
   const posicionPeliculaBuscado = catalogo.findIndex(
     (itemPelicula) => itemPelicula.id === idPelicula
   );
-  console.log(posicionPeliculaBuscado);
+  
   //borrar la Pelicula de catalogo usando splice(posicion, cant de elementos a borrar)
   catalogo.splice(posicionPeliculaBuscado, 1);
   //actualizar localstorage
@@ -96,7 +96,7 @@ window.borrarPelicula = (idPelicula) => {
 };
 
 window.detallePelicula = (idPelicula) => {
-  console.log(window.location);
+  
   window.location.href =
     window.location.origin + "/pages/detallePelicula.html?id=" + idPelicula;
 };
