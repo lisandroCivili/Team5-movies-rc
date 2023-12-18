@@ -37,12 +37,13 @@ export default class UsuarioNuevo{
             this.#apellido = apellidoString;
         }
     }
+
     get usuario(){
-        return this.#apellido;
+        return this.#usuario;
     }
-    set usuario(apellidoString){
-        if (apellidoString !== null) {
-            this.#apellido = apellidoString;
+    set usuario(usuarioString){
+        if (usuarioString !== null) {
+            this.#usuario = usuarioString;
         }
     }
     
