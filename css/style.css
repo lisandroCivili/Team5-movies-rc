@@ -9,12 +9,11 @@
 }
 
 body {
-    /* esto es de ejemplo como se usa despues lo borran*/
     background-color: var(--color1);
     margin: 0%;
 }
 .titulos {
-    font-family: var(--fuenteRoboto);
+  font-family: var(--fuenteRoboto);
   color: white;
 }
 #botonesNav, #contenedorNav{
@@ -26,11 +25,17 @@ body {
 .modal-content{
   background-color: var(--color4);
 }
-.imgCarrusel{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+
+.slider-container a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.tituloCategorias{
+  background-color: var(--color1);
+}
+
 @media screen and (max-width: 575px){
   #nombreNavbar{
     display: none;
@@ -65,11 +70,14 @@ body {
     font-size: 15px;
   }
   .navbar-toggler, #logIn, #signIn{
-    background-color: var(--color4);
+    background-color: #5e7c8b;
+  }
+  .navbar-toggler{
+    border-radius: 2px;
   }
   #logIn, #signIn{
     border: black solid .1px;
-    color: #1B4242;
+    color: black;
   }
   .opcionesNav{
     background-color: var(--color4);
@@ -77,19 +85,26 @@ body {
   }
   
   #seccionCategorias{
-    margin-top: 12px;
+    margin-top: 45px;
+  } 
+
+  .tituloCategorias h2{
+    margin-left: 2vw;
+    font-size: 20px;
   }
-  .portadas{
-    width: 100%;
+
+  .slider-container{
+    margin: 10px 0 25px 0;
   }
-  #carruselPortadas{
-    height: 32vh;
+  
+  .slider-container a{
+    padding-bottom: 20px;
   }
-  .categorias{
-    background-color: var(--color1);
-  }
-  .categorias h2{
-    color: var(--color4);
+  .imgCarrusel{
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: -1px 15px 20px  rgba(0, 0, 0, 0.5);
   }
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
@@ -164,15 +179,27 @@ body {
     width: 1366px;
   }
 
-  .portadas{
-    width: 100%;
-  }
-  .categorias {
-    background-color: var(--color1);
+  #seccionCategorias{
+    margin-top: 180px;
   }
 
-  .categorias h2 {
-    color: var(--color4);
+  .tituloCategorias h2{
+    margin-left: 3.5vw;
+    font-size: 35px;
+  }
+  .slider-container{
+    margin: 10px 0 25px 0;
+  }
+  
+  .slider-container a{
+    padding-bottom: 30px;
+  }
+
+  .imgCarrusel{
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: -1px 30px 25px  rgba(0, 0, 0, 0.5);
   }
 }
 @media screen and (min-width: 992px){
@@ -220,13 +247,33 @@ body {
   .portadasCarrusel{
     height: 100%;
   }
-  .portadas{
-    height: 100%;
-    width: 50%;
-  } 
-  .categorias{
-    background-color: var(--color1);
+
+  #seccionCategorias{
+    margin-top: 25px;
   }
+  .tituloCategorias h2{
+    margin-left: 1vw;
+    font-size: 30px;
+  }
+
+  .slider-container{
+    height: 50vh;
+  }
+
+  .imgCarrusel{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    box-shadow: -1px 5px 30px  rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, border 0.3s;
+    padding: 3px;
+  }
+  .imgCarrusel:hover{
+    transform: scale(1.1);
+    border: 3px solid #ffffff;
+    cursor: pointer;
+  }
+  
 }
 
   .modal-footer{
