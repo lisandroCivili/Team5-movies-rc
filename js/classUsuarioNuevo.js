@@ -98,7 +98,8 @@ export default class UsuarioNuevo{
             contrasena: this.contrasena,
             repContra: this.repContra,
             genero: this.genero,
-            nacimiento: this.nacimiento
+            nacimiento: this.nacimiento,
+            usuario:this.usuario
         };
     }
 }
