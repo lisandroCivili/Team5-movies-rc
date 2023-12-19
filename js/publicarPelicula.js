@@ -22,7 +22,7 @@ export const mostrarPelicula = (peliculas) => {
                 imgDrama.src = `img/portadas/${peliculas.url}`;
                 imgDrama.classList.add("imgCarrusel");
                 aDrama.appendChild(imgDrama);
-                catDrama.appendChild(aDrama);
+                catDrama.prepend(aDrama);
 
                 break;
             case "Accion":
@@ -31,7 +31,7 @@ export const mostrarPelicula = (peliculas) => {
                 imgAccion.src = `img/portadas/${peliculas.url}`;
                 imgAccion.classList.add("imgCarrusel");
                 aAccion.appendChild(imgAccion);
-                catAccion.appendChild(aAccion);
+                catAccion.prepend(aAccion);
 
                 break;
             case "Comedia":
@@ -40,7 +40,7 @@ export const mostrarPelicula = (peliculas) => {
                 imgComedia.src = `img/portadas/${peliculas.url}`;
                 imgComedia.classList.add("imgCarrusel");
                 aComedia.appendChild(imgComedia);
-                catComedia.appendChild(aComedia);
+                catComedia.prepend(aComedia);
 
                 break;
             case "Ciencia Ficcion":
@@ -49,7 +49,7 @@ export const mostrarPelicula = (peliculas) => {
                 imgFiccion.src = `img/portadas/${peliculas.url}`;
                 imgFiccion.classList.add("imgCarrusel");
                 aFiccion.appendChild(imgFiccion);
-                catCiFi.appendChild(aFiccion);
+                catCiFi.prepend(aFiccion);
 
                 break;
             case "Thriller":
@@ -58,7 +58,7 @@ export const mostrarPelicula = (peliculas) => {
                 imgThriller.src = `img/portadas/${peliculas.url}`;
                 imgThriller.classList.add("imgCarrusel");
                 aThriller.appendChild(imgThriller);
-                catThriller.appendChild(aThriller);
+                catThriller.prepend(aThriller);
 
                 break;
             default:
