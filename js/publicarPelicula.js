@@ -6,62 +6,59 @@ let catCiFi = document.getElementById("catCiFi");
 let catThriller = document.getElementById("catThriller");
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtener películas del localStorage
+
     peliculas = JSON.parse(localStorage.getItem("catalogoKey")) || [];
 
     mostrarPelicula(peliculas);
 });
 
-
 export const mostrarPelicula = (peliculas) => {
-    // Selecciona el contenedor donde deseas mostrar las películas (puede variar según tu estructura HTML)
 
-    // Iterar sobre las películas y crear elementos HTML para mostrarlas
     peliculas.forEach(function (peliculas) {
         switch (peliculas.categoria) {
             case "Drama":
-                const liDrama = document.createElement("li");
+                const aDrama = document.createElement("a");
                 const imgDrama = document.createElement("img");
                 imgDrama.src = `img/portadas/${peliculas.url}`;
                 imgDrama.classList.add("imgCarrusel");
-                liDrama.appendChild(imgDrama);
-                catDrama.appendChild(liDrama);
+                aDrama.appendChild(imgDrama);
+                catDrama.appendChild(aDrama);
 
                 break;
             case "Accion":
-                const liAccion = document.createElement("li");
+                const aAccion = document.createElement("a");
                 const imgAccion = document.createElement("img");
                 imgAccion.src = `img/portadas/${peliculas.url}`;
                 imgAccion.classList.add("imgCarrusel");
-                liAccion.appendChild(imgAccion);
-                catAccion.appendChild(liAccion);
+                aAccion.appendChild(imgAccion);
+                catAccion.appendChild(aAccion);
 
                 break;
             case "Comedia":
-                const liComedia = document.createElement("li");
+                const aComedia = document.createElement("a");
                 const imgComedia = document.createElement("img");
                 imgComedia.src = `img/portadas/${peliculas.url}`;
                 imgComedia.classList.add("imgCarrusel");
-                liComedia.appendChild(imgComedia);
-                catComedia.appendChild(liComedia);
+                aComedia.appendChild(imgComedia);
+                catComedia.appendChild(aComedia);
 
                 break;
             case "Ciencia Ficcion":
-                const liFiccion = document.createElement("li");
+                const aFiccion = document.createElement("a");
                 const imgFiccion = document.createElement("img");
                 imgFiccion.src = `img/portadas/${peliculas.url}`;
                 imgFiccion.classList.add("imgCarrusel");
-                liFiccion.appendChild(imgFiccion);
-                catCiFi.appendChild(liFiccion);
+                aFiccion.appendChild(imgFiccion);
+                catCiFi.appendChild(aFiccion);
 
                 break;
             case "Thriller":
-                const liThriller = document.createElement("li");
+                const aThriller = document.createElement("a");
                 const imgThriller = document.createElement("img");
                 imgThriller.src = `img/portadas/${peliculas.url}`;
                 imgThriller.classList.add("imgCarrusel");
-                liThriller.appendChild(imgThriller);
-                catThriller.appendChild(liThriller);
+                aThriller.appendChild(imgThriller);
+                catThriller.appendChild(aThriller);
 
                 break;
             default:
