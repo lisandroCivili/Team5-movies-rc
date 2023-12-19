@@ -62,7 +62,7 @@ const dibujarFila = (Pelicula, numeroFila) => {
   <input type="checkbox" id="cbox${numeroFila}" />
 </div></td>
   <td>
-    <button class="btn btn-primary" onclick="detallePelicula('${Pelicula.id}')"><i class="bi bi-star-fill"></i></button>
+    <button class="btn btn-primary" ><i class="bi bi-star-fill"></i></button>
     <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
     <button class="btn btn-danger" onclick="borrarPelicula('${Pelicula.id}')"><i class="bi bi-trash-fill"></i></button>
   </td>
