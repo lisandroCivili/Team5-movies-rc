@@ -55,6 +55,7 @@ const resetearForm = () =>{
 }
 
 const guardarLocalStorage = ()=>{   
+    console.log(usuariosNuevos);
     localStorage.setItem('usuarioNuevoKey', JSON.stringify(usuariosNuevos));    
 }
 formularioSignin.addEventListener('submit', crearContacto);
