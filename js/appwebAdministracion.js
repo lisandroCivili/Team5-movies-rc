@@ -10,7 +10,7 @@ const catalogo = JSON.parse(localStorage.getItem("catalogoKey")) || [];
 //funciones
 const crearPelicula = (e) => {
   e.preventDefault();
-  console.log("desde la funcion que crea los Peliculas");
+  
   //en el evento submit
   //preventDefault
   //tomo los datos de los inputs (validar)
@@ -26,7 +26,7 @@ const crearPelicula = (e) => {
     );
     //guardo el objeto en un array
     catalogo.push(nuevaPelicula);
-    console.log(catalogo);
+
     limpiarFormularioPelicula();
     //guardar el array en el localstorage JSON
     guardarEnLocalstorage();
