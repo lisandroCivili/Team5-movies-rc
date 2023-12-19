@@ -57,15 +57,15 @@ const dibujarFila = (Pelicula, numeroFila) => {
   const tablaPeliculas = document.getElementById("tablaPelicula");
   tablaPeliculas.innerHTML += `<tr>
   <th scope="row">${numeroFila}</th>
-  <td>${Pelicula.nombre}</td>
-  <td>${Pelicula.categoria}</td>
-  <td>${Pelicula.descripcion}</td>
+  <td class="nombreHTML">${Pelicula.nombre}</td>
+  <td class="categoriaHTML">${Pelicula.categoria}</td>
+  <td class="descHTML">${Pelicula.descripcion}</td>
   <td><div class="checkbox text-center">
   <input type="checkbox" id="cbox${numeroFila}" />
 </div></td>
   <td>
     <button class="btn btn-primary" onclick="detallePelicula('${Pelicula.id}')"><i class="bi bi-star-fill"></i></button>
-    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" ><i class="bi bi-pencil-square"></i></button>
     <button class="btn btn-danger" onclick="borrarPelicula('${Pelicula.id}')"><i class="bi bi-trash-fill"></i></button>
   </td>
 </tr>`;
@@ -93,7 +93,9 @@ window.borrarPelicula = (idPelicula) => {
   guardarEnLocalstorage();
   //borrar la fila de la tabla
   const tablaPeliculas = document.getElementById("tablaPelicula");
+  const imagenPelicula = document.querySelector(`.${idPelicula}`);
   tablaPeliculas.innerHTML = "";
+  imagenPelicula.innerHTML = "";
   cargaInicial();
 };
 

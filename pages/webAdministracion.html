@@ -270,6 +270,59 @@
               <button class="btn btn-warning">
                 <i class="bi bi-pencil-square"></i>
               </button>
+              <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modalEditarLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="editarPelicula">
+                        <div class="mb-3">
+                          <label for="nombrePeliEditar" class="form-label">Nombre</label>
+                          <input
+                            type="text"
+                            id="nombrePeliEditar"
+                            class="form-control"
+                            placeholder="Ej: The Matrix"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="categoriaEditar" class="form-label">Categoria</label>
+                          <select id="categoriaEditar" class="form-select" aria-label="Default select" >
+                            <option selected>Seleccione una opción</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Accion">Acción</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Ciencia Ficcion">Ciencia Ficción</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="descripcionEditar" class="form-label">Descripción</label>
+                          <input
+                            type="text"
+                            id="descripcionEditar"
+                            class="form-control"
+                            placeholder="Descripción breve"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="imagenEditar" class="form-label">Agregar imagen</label>
+                          <input
+                            type="text"
+                            id="imagenEditar"
+                            class="form-control"
+                            placeholder="Nombre de la iamgen con extension"
+                          />
+                        </div>
+                          <button class="btn btn-primary" type="submit">Agregar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <button
                 class="btn btn-danger"
                 onclick="borrarPelicula('${Pelicula.id}')"
