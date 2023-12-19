@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+        <div id="contenedorNav" class="container-fluid categorias p-2">
+          <img
+            src="../img/logoIA.png"
+            alt="Logo"
+            width="70"
+            height="70"
+            id="logoNavbar"
+            class="d-inline-block align-items-center"
+          />
+
+          <a id="nombreNavbar" class="navbar-brand" href="#">Rolling Movies</a>
+
+          <div id="botonesLogeo" class="btn-group ms-5">
+            <a href="#" id="logIn" class="btn btn-primary fw-medium">Log in</a>
+            <a
+              href="#"
+              id="signIn"
+              class="btn btn-primary fw-medium"
+              data-bs-toggle="modal"
+              data-bs-target="#modalLogin"
+              >Sign in</a
+            >
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalLogin"
+            tabindex="-1"
+            aria-labelledby="modalLoginLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- AGREGAR INDICACIONES DE MINIMOS Y MAXIMOS DE INPUTS AL USUARIO -->
+
+               <form id="registroForm">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLoginLabel">
+                      Registro
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombre"
+                        placeholder="Nombre y apellido"
+                      />
+                      <label for="nombre">Nombres</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apellido"
+                        placeholder="Nombre y apellido"
+                      />
+                      <label for="apellido">Apellidos</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="correo"
+                        placeholder="nombre@ejemplo.com"
+                      />
+                      <label for="correo">Email</label>
+                    </div>
+                    <div class="form-floating">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="contrasena"
+                        placeholder="Contraseña"
+                      />
+                      <label for="contrasena">Contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="repetirContrasena"
+                        placeholder="Contraseña"
+                      />
+                      <label for="repetirContrasena">Repetir contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="fechaNac"
+                        placeholder="Contraseña"
+                      />
+                      <label for="fechaNac">Fecha de nacimiento</label>
+                    </div>
+                    <select
+                      id="genero"
+                      class="form-select"
+                      aria-label="Default select"
+                    >
+                      <option selected>Género:</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Registrarse
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <!--aqui -->
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#botonesNav"
+            aria-controls="botonesNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="botonesNav">
+            <ul id="opcionesMenu" class="navbar-nav ms-lg-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active p-2 my-1 fw-medium opcionesNav"
+                  aria-current="page"
+                  href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="./nosotros.html"
+                  >Nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="./contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="sectorPeliculaDestacada" class="d-flex align-items-center">
+        <div id="peliculaDestacada">
+          <img src="../img/peliculaDestacada.jpg" id="imgPeliculaDestacada" />
+        </div>
+        <div id="textoImgDestacada">
+          <h1 class="titulos text-end text-white m-0">INTERESTELLAR</h1>
+          <h4 id="tendencias" class="text-end text-white">
+            <i class="bi bi-arrow-up-circle-fill"></i> N° 1 en tendencias hoy
+          </h4>
+          <p id="resumenImgDestacada" class="text-end text-white">
+            Sigue a astronautas en busca de un nuevo hogar para la humanidad
+            debido a la crisis ambiental en la Tierra. Dirigida por Christopher
+            Nolan, la película combina ciencia ficción, efectos visuales
+            impresionantes y temas emocionales.
+          </p>
+          <div class="text-lg-end">
+            <button
+              type="button"
+              id="reproducirDestacada"
+              class="btn btn btn-outline-light"
+            >
+              <i class="bi bi-badge-hd-fill"></i> Reproducir
+            </button>
+            <button
+              type="button"
+              id="informacionDestacada"
+              class="btn btn btn-outline-light"
+            >
+              Mas información
+            </button>
+          </div>
+        </div>
+      </section>
+      <div id="titulotabla" class="d-flex align-items-center justify-content-between">
+        <h1 class="text-light">Administrar Productos</h1>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalContacto"
+          id="btnNuevaPelicula"
+        >
+          Nueva pelicula
+        </button>
+      </div>
+      <section class="table-responsive mt-4">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Publicado</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tr>
+            <th scope="row">#</th>
+            <td>Dark</td>
+            <td>Series</td>
+            <td>descripcion breve</td>
+            <td>
+              <div class="checkbox text-center">
+                <input type="checkbox" id="cbox0" />
+              </div>
+            </td>
+            <td>
+              <a class="btn btn-primary"><i class="bi bi-star-fill"></i></a>
+              <button class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button
+                class="btn btn-danger"
+                onclick="borrarPelicula('${Pelicula.id}')"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+          <tbody id="tablaPelicula"></tbody>
+        </table>
+      </section>
+    </main>
+    <div
+      class="modal"
+      id="modalContacto"
+      tabindex="-1"
+      aria-labelledby="modalContactoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registro de Pelicula</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registroPelicula">
+              <div class="mb-3">
+                <label for="nombrepeli" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  id="nombrepeli"
+                  class="form-control"
+                  placeholder="Ej: The Matrix"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria</label>
+                <input
+                  type="text"
+                  id="categoria"
+                  class="form-control"
+                  placeholder="Ej: Ciencia Ficción"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <input
+                  type="text"
+                  id="descripcion"
+                  class="form-control"
+                  placeholder="Descripción breve"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Agregar imagen</label>
+                <input
+                  type="text"
+                  id="imagen"
+                  class="form-control"
+                  placeholder="Nombre de la iamgen con extension"
+                />
+              </div>
+
+              <button class="btn btn-primary" type="submit">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="color text-light pt-4 z-3">
+      <div class="container">
+        <p class="text-center">Seguinos en nuetras redes</p>
+        <div class="text-center">
+          <a href="#" class="link-secondary">
+            <i class="bi bi-instagram fs-3"></i
+          ></a>
+          <a href="#" class="link-secondary mx-4">
+            <i class="bi bi-facebook fs-3"></i
+          ></a>
+          <a href="#" class="link-secondary">
+            <i class="bi bi-linkedin fs-3"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/appwebAdministracion.js" type="module"></script>
+  </body>
+</html>
