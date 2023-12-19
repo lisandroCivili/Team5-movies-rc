@@ -4,7 +4,8 @@ import Pelicula from "./classPelicula.js";
 const formularioPelicula = document.querySelector("#registroPelicula");
 const nombre = document.querySelector("#nombrepeli"),
   categoria = document.querySelector("#categoria"),
-  descripcion = document.querySelector("#descripcion");
+  descripcion = document.querySelector("#descripcion"),
+  imagen = document.querySelector("#imagen");
 const catalogo = JSON.parse(localStorage.getItem("catalogoKey")) || [];
 
 //funciones
@@ -22,11 +23,12 @@ const crearPelicula = (e) => {
     const nuevaPelicula = new Pelicula(
       nombre.value,
       categoria.value,
-      descripcion.value
+      descripcion.value,
+      imagen.value
     );
     //guardo el objeto en un array
     catalogo.push(nuevaPelicula);
-
+    console.log(catalogo);
     limpiarFormularioPelicula();
     //guardar el array en el localstorage JSON
     guardarEnLocalstorage();

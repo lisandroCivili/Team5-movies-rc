@@ -3,12 +3,14 @@ export default class Pelicula {
   #nombre;
   #categoria;
   #descripcion;
+  #url;
 
-  constructor(nombre, categoria, descripcion) {
+  constructor(nombre, categoria, descripcion, url) {
     this.#id = crypto.randomUUID();
     this.#nombre = nombre;
     this.#categoria = categoria;
     this.#descripcion = descripcion;
+    this.#url = url;
   }
 
   get id() {
@@ -39,12 +41,21 @@ export default class Pelicula {
     this.#descripcion = nuevaDescripcion;
   }
 
+  get url() {
+    return this.#url;
+  }
+
+  set url(nuevaUrl) {
+    this.#url = nuevaUrl;
+  }
+
   toJSON() {
     return {
       nombre: this.nombre,
       categoria: this.categoria,
       id: this.id,
       descripcion: this.descripcion,
+      url: this.url
     };
   }
 }
