@@ -1,15 +1,17 @@
 export default class UsuarioNuevo{
     #nombre;
     #apellido;
+    #usuario;
     #contrasena;
     #correo;
     #repetirContrasena;
     #id;
     #genero;
     #nacimiento;
-    constructor(nombreParam, apellidoParam, correoParam, contraParam, repetContraParam, generoParam, nacParam){
+    constructor(nombreParam, apellidoParam, usuarioParam, correoParam, contraParam, repetContraParam, generoParam, nacParam){
         this.#id = crypto.randomUUID();
         this.#nombre = nombreParam;
+        this.#usuario = usuarioParam;
         this.#apellido = apellidoParam;
         this.#contrasena = contraParam;
         this.#correo = correoParam;
@@ -36,6 +38,15 @@ export default class UsuarioNuevo{
         }
     }
 
+    get usuario(){
+        return this.#usuario;
+    }
+    set usuario(usuarioString){
+        if (usuarioString !== null) {
+            this.#usuario = usuarioString;
+        }
+    }
+    
     get correo(){
         return this.#correo;
     }

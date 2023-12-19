@@ -6,7 +6,7 @@ const validar = {
     requerido: true
   },   
 	password:{
-    exprecion: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+={}\[\]:;<>,.?/~])(?!.*\s).{8,20}$/,
+    exprecion: /^(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{8,20}$/,
     error:'al menos 1 mayuscula,1 numero,1 carter especial y min 8 max 20 caracteres',
     requerido:true
   },  
@@ -66,7 +66,17 @@ inputsLogin.forEach(input =>{
 
 formLogin.addEventListener('submit',(e)=>{
   e.preventDefault();
-  console.log(JSON.parse(localStorage.getItem('usuarioNuevoKey')));
+  const usuarios = JSON.parse(localStorage.getItem('usuarioNuevoKey'));
+  console.log(usuarios);
+  console.log(formLogin.password.value);
+  const encontrado = usuarios.find(usuario => usuario.contrasena === formLogin.password.value && usuario.usuario===formLogin.usuario);
+  debugger
+  if (encontrado) {
+    console.log('Objeto encontrado:', encontrado.nombre);
+    formLogin.reset();
+  } else {
+    console.log('No se encontró el objeto');
+  }
   
   
 });
