@@ -4,6 +4,7 @@ import { validarLargo, validarMail, validarContra, validarRepetirContra} from ".
 const formularioSignin = document.getElementById('registroForm');
 const nombre = document.getElementById('nombre'),
       apellido = document.getElementById('apellido'),
+      usuario = document.getElementById('usuario'),
       correo = document.getElementById('correo'),
       contrasena = document.getElementById('contrasena'),
       repetirContra = document.getElementById('repetirContrasena'),
@@ -14,6 +15,7 @@ const usuariosNuevos = JSON.parse(localStorage.getItem('usuarioNuevoKey')) || []
       
 nombre.addEventListener('input', ()=>{validarLargo(nombre, 3, 35)});
 apellido.addEventListener('input', ()=>{validarLargo(apellido, 3, 35)});
+usuario.addEventListener('input', ()=>{validarLargo(usuario, 5, 10)});
 correo.addEventListener('input', ()=>{validarMail(correo)});
 contrasena.addEventListener('input', ()=>{validarContra(contrasena)});
 repetirContra.addEventListener('input', ()=>{validarRepetirContra(repetirContra)});
@@ -27,7 +29,7 @@ const crearContacto = (e) =>{
     validarContra(contrasena) &&
     validarRepetirContra(repetirContra)) {
         
-        const nuevoUsuario = new UsuarioNuevo(nombre.value, apellido.value, correo.value, contrasena.value, repetirContra.value, genero.value, cambiarFormatoFecha(fechaNac.value));
+        const nuevoUsuario = new UsuarioNuevo(nombre.value, apellido.value, usuario.value, correo.value, contrasena.value, repetirContra.value, genero.value, cambiarFormatoFecha(fechaNac.value));
         usuariosNuevos.push(nuevoUsuario);
         console.log(usuariosNuevos);
         guardarLocalStorage();
@@ -52,7 +54,7 @@ const resetearForm = () =>{
     formularioSignin.reset();
 }
 
-const guardarLocalStorage = ()=>{
-    localStorage.setItem('usuarioNuevoKey', JSON.stringify(usuariosNuevos));
+const guardarLocalStorage = ()=>{   
+    localStorage.setItem('usuarioNuevoKey', JSON.stringify(usuariosNuevos));    
 }
 formularioSignin.addEventListener('submit', crearContacto);

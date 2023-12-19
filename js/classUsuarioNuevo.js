@@ -1,30 +1,24 @@
-export default class UsuarioNuevo {
-  #nombre;
-  #apellido;
-  #contrasena;
-  #correo;
-  #repetirContrasena;
-  #id;
-  #genero;
-  #nacimiento;
-  constructor(
-    nombreParam,
-    apellidoParam,
-    correoParam,
-    contraParam,
-    repetContraParam,
-    generoParam,
-    nacParam
-  ) {
-    this.#id = crypto.randomUUID();
-    this.#nombre = nombreParam;
-    this.#apellido = apellidoParam;
-    this.#contrasena = contraParam;
-    this.#correo = correoParam;
-    this.#repetirContrasena = repetContraParam;
-    this.#genero = generoParam;
-    this.#nacimiento = nacParam;
-  }
+export default class UsuarioNuevo{
+    #nombre;
+    #apellido;
+    #usuario;
+    #contrasena;
+    #correo;
+    #repetirContrasena;
+    #id;
+    #genero;
+    #nacimiento;
+    constructor(nombreParam, apellidoParam, usuarioParam, correoParam, contraParam, repetContraParam, generoParam, nacParam){
+        this.#id = crypto.randomUUID();
+        this.#nombre = nombreParam;
+        this.#usuario = usuarioParam;
+        this.#apellido = apellidoParam;
+        this.#contrasena = contraParam;
+        this.#correo = correoParam;
+        this.#repetirContrasena = repetContraParam;
+        this.#genero = generoParam;
+        this.#nacimiento = nacParam;
+    }
 
   get nombre() {
     return this.#nombre;
@@ -35,6 +29,7 @@ export default class UsuarioNuevo {
     }
   }
 
+
   get apellido() {
     return this.#apellido;
   }
@@ -43,6 +38,15 @@ export default class UsuarioNuevo {
       this.#apellido = apellidoString;
     }
   }
+
+    get usuario(){
+        return this.#usuario;
+    }
+    set usuario(usuarioString){
+        if (usuarioString !== null) {
+            this.#usuario = usuarioString;
+        }
+    }
 
   get correo() {
     return this.#correo;
@@ -100,6 +104,7 @@ export default class UsuarioNuevo {
       repContra: this.repContra,
       genero: this.genero,
       nacimiento: this.nacimiento,
+      usuario: this.usuario
     };
   }
 }

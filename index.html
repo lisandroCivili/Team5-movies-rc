@@ -18,7 +18,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
-        <div id="contenedorNav" class="container-fluid categorias p-2">
+        <div id="contenedorNav" class="container-fluid categorias p-2 m-0">
           <img
             src="./img/logoIA.png"
             alt="Logo"
@@ -55,6 +55,10 @@
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="apellido"  placeholder="Nombre y apellido">
                       <label for="apellido">Apellidos</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="usuario"  placeholder="Nombre de usuario">
+                      <label for="usuario">Nombre de usuario</label>
                     </div>
                     <div class="form-floating mb-3">
                       <input type="email" class="form-control" id="correo"  placeholder="nombre@ejemplo.com">
@@ -201,13 +205,13 @@
       </section>
                                                     <!-- SECTOR CATEGORIAS -->
       <section id="seccionCategorias">
-        <article>
-            <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid categorias p-2">
-                  <h2 class="navbar-brand mb-0 titulos">Drama</h2>
+        
+        <article class="categorias">
+                <div class="container-fluid tituloCategorias">
+                  <h2 class="mb-0 titulos fw-bold">Drama</h2>
                 </div>
-            </nav>
             <div class="swiffy-slider slider-item-show3">
+
               <ul class="slider-container" id="catDrama">
                   
                   <li><img src="img/portadas/en-busca-de-la-felicidad.webp" class="imgCarrusel"></li>
@@ -231,13 +235,15 @@
               </div>
           </div>
         </article>
-        <article>
-            <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid categorias p-2">
-                  <h2 class="navbar-brand mb-0 titulos">Acción</h2>
+        
+        
+        
+        <article class="categorias">
+                <div class="container-fluid tituloCategorias">
+                  <h2 class="mb-0 titulos fw-bold">Acción</h2>
                 </div>
-            </nav>
             <div class="swiffy-slider slider-item-show3">
+
               <ul class="slider-container" id="catAccion">
                   <li><img src="img/portadas/el-renacido.webp" class="imgCarrusel"></li>
                   <li><img src="img/portadas/en-busca-de-la-felicidad.webp" class="imgCarrusel"></li>
@@ -261,13 +267,13 @@
               </div>
           </div>
         </article>
-        <article>
-            <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid categorias p-2">
-                  <h2 class="navbar-brand mb-0 titulos">Comedia</h2>
+    
+        <article class="categorias">
+                <div class="container-fluid tituloCategorias">
+                  <h2 class="mb-0 titulos fw-bold">Comedia</h2>
                 </div>
-            </nav>
             <div class="swiffy-slider slider-item-show3">
+
               <ul class="slider-container" id="catComedia">
                   <li><img src="img/portadas/el-renacido.webp" class="imgCarrusel"></li>
                   <li><img src="img/portadas/en-busca-de-la-felicidad.webp" class="imgCarrusel"></li>
@@ -291,13 +297,13 @@
               </div>
           </div>
         </article>
-        <article>
-            <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid categorias p-2">
-                  <h2 class="navbar-brand mb-0 titulos">Ciencia Ficción</h2>
+  
+        <article class="categorias">
+                <div class="container-fluid tituloCategorias">
+                  <h2 class="mb-0 titulos fw-bold">Ciencia Ficción</h2>
                 </div>
-            </nav>
             <div class="swiffy-slider slider-item-show3">
+
               <ul class="slider-container" id="catCiFi">
                   <li><img src="img/portadas/el-renacido.webp" class="imgCarrusel"></li>
                   <li><img src="img/portadas/en-busca-de-la-felicidad.webp" class="imgCarrusel"></li>
@@ -321,13 +327,13 @@
               </div>
           </div>
         </article>
-        <article>
-            <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid categorias p-2">
-                  <h2 class="navbar-brand mb-0 titulos">Thriller</h2>
+
+        <article class="categorias">
+                <div class="container-fluid tituloCategorias">
+                  <h2 class="mb-0 titulos fw-bold">Thriller</h2>
                 </div>
-            </nav>
             <div class="swiffy-slider slider-item-show3">
+
               <ul class="slider-container" id="catThriller">
                   <li><img src="img/portadas/el-renacido.webp" class="imgCarrusel"></li>
                   <li><img src="img/portadas/en-busca-de-la-felicidad.webp" class="imgCarrusel"></li>
@@ -351,6 +357,7 @@
               </div>
           </div>
         </article>
+        
         
         
       </section>
