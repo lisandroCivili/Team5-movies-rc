@@ -28,7 +28,7 @@ export const mostrarPelicula = (peliculas) => {
                 catDrama.appendChild(liDrama);
 
                 break;
-            case "Acción":
+            case "Accion":
                 const liAccion = document.createElement("li");
                 const imgAccion = document.createElement("img");
                 imgAccion.src = `img/portadas/${peliculas.url}`;
@@ -46,7 +46,7 @@ export const mostrarPelicula = (peliculas) => {
                 catComedia.appendChild(liComedia);
 
                 break;
-            case "Ciencia Ficción":
+            case "Ciencia Ficcion":
                 const liFiccion = document.createElement("li");
                 const imgFiccion = document.createElement("img");
                 imgFiccion.src = `img/portadas/${peliculas.url}`;
