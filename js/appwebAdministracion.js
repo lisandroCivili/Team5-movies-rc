@@ -93,7 +93,12 @@ window.borrarPelicula = (idPelicula) => {
   guardarEnLocalstorage();
   //borrar la fila de la tabla
   const tablaPeliculas = document.getElementById("tablaPelicula");
+  const imagenPelicula = document.querySelector(idPelicula);
   tablaPeliculas.innerHTML = "";
+  if (imagenPelicula.innerHTML !== "") {
+    imagenPelicula.innerHTML = "";
+  }
+  
   cargaInicial();
 };
 /**************esta parte estaba vinculada al boton de favorito**********/
