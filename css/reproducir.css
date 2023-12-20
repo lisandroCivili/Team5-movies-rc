@@ -1,0 +1,230 @@
+body {
+    font-family: var(--fuenteMontserrat);
+    text-align: center;
+    color: #fff;
+}
+
+.reproducirMain {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.reproducirInfo {
+    display: flex;
+    width: 75%;
+    text-align: start;
+    align-items: center;
+    margin: 5rem auto 2rem;
+}
+
+.infoTextContainer {
+    margin-left: 2rem;
+}
+
+.infoScore {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.infoParagraph {
+    color: #ccc;
+}
+
+.infoImg {
+    width: 25%;
+}
+
+.reproducirVideo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    width: 75%;
+    margin: 4rem auto;
+}
+
+.reproductor {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #000;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reproductor img{
+    width: 13%;
+}
+
+.reproducirConfig {
+    width: 100%;
+    background-color: var(--color2);
+    padding: .5rem;
+    box-sizing: border-box;
+}
+
+/* circles background */
+.bgCirclesContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.bgCirclesContainer .circle {
+    position: absolute;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    background-color: var(--color3);
+}
+/* separate circles */
+.bgCirclesContainer .circle:nth-of-type(1) {
+    right: -20%;
+    top: 25%;
+}
+.bgCirclesContainer .circle:nth-of-type(2) {
+    top: -10%;
+    left: -21%;
+}
+.bgCirclesContainer .circle:nth-of-type(3) {
+    background-color: var(--color2);
+    bottom: -40%;
+    left: -8%;
+}
+.bgCirclesContainer .circle:nth-of-type(4) {
+    bottom: -30%;
+    left: 0%;
+}
+
+@media only screen and (max-width: 380px) {
+ 
+    .bgCirclesContainer .circle {
+        height: 300px;
+        width: 300px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -40%;
+        top: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        left: -55%;
+        top: 26%;
+        opacity: 70%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -40%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -8%;
+        left: 7%;
+    }
+}
+@media only screen and (min-width: 381px) and (max-width: 600px) {
+    
+
+    .bgCirclesContainer .circle {
+        height: 300px;
+        width: 300px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -40%;
+        top: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        left: -45%;
+        top: 22%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -40%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -8%;
+        left: 7%;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+
+
+    .bgCirclesContainer .circle {
+        height: 300px;
+        width: 300px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -30%;
+        top: -5%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        left: -35%;
+        top: 20%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -10%;
+        left: 8%;
+    }
+}
+@media only screen and (min-width: 901px) and (max-width: 1024px) {
+
+    .bgCirclesContainer .circle {
+        height: 300px;
+        width: 300px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -20%;
+        top: 0%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        left: -11%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -5%;
+        left: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -10%;
+        left: 8%;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+    .bgCirclesContainer .circle {
+        height: 400px;
+        width: 400px;
+    }
+    /* separate circles */
+    .bgCirclesContainer .circle:nth-of-type(1) {
+        right: -20%;
+        top: 25%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(2) {
+        top: -10%;
+        left: -21%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(3) {
+        background-color: var(--color2);
+        bottom: -15%;
+        left: -8%;
+    }
+    .bgCirclesContainer .circle:nth-of-type(4) {
+        bottom: -20%;
+        left: 0%;
+    }
+}
