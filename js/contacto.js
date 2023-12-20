@@ -29,7 +29,11 @@ const forms = document.querySelectorAll('.needs-validation')
        emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
           btn.value = 'Send Email';
-          alert('Sent!');
+          Swal.fire({
+            title: "Consulta enviada",
+            text: "Su consulta fue enviada exitosamete!",
+            icon: "success"
+          });
         }, (err) => {
           btn.value = 'Send Email';
           alert(JSON.stringify(err));
