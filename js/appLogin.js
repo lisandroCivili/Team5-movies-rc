@@ -29,6 +29,13 @@ const validar = {
         return input.value ? input.classList.contains('is-valid'): true;
       }
     });
+  },
+  borrarForm: function(form){
+    form.reset();
+    let inputs = form.querySelectorAll('input:not([type="checkbox"])');
+    inputs.forEach(input =>{
+      input.classList.remove('is-valid');
+    })
   }
 };
 
@@ -64,18 +71,36 @@ inputsLogin.forEach(input =>{
   input.addEventListener('blur',validarForm);
 })
 
+
+
 formLogin.addEventListener('submit',(e)=>{
   e.preventDefault();
   const usuarios = JSON.parse(localStorage.getItem('usuarioNuevoKey'));
   console.log(usuarios);
   console.log(formLogin.password.value);
-  const encontrado = usuarios.find(usuario => usuario.contrasena === formLogin.password.value);
-  debugger
+
+  const encontrado = usuarios.find(usuario => usuario.contrasena === formLogin.password.value && usuario.usuario===formLogin.usuario.value);
+ 
   if (encontrado) {
     console.log('Objeto encontrado:', encontrado.nombre);
-    formLogin.reset();
+    validar.borrarForm(formLogin);  
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Bienvenido ${encontrado.nombre}`,
+      showConfirmButton: false,
+      timer: 2500
+    });
   } else {
     console.log('No se encontró el objeto');
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: `Usuario y/o password incorrecto`,
+      showConfirmButton: false,
+      timer: 2500
+    });
+
   }
   
   
