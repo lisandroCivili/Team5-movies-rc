@@ -78,6 +78,7 @@ formLogin.addEventListener('submit',(e)=>{
   const usuarios = JSON.parse(localStorage.getItem('usuarioNuevoKey'));
   console.log(usuarios);
   console.log(formLogin.password.value);
+
   const encontrado = usuarios.find(usuario => usuario.contrasena === formLogin.password.value && usuario.usuario===formLogin.usuario.value);
  
   if (encontrado) {
@@ -99,6 +100,7 @@ formLogin.addEventListener('submit',(e)=>{
       showConfirmButton: false,
       timer: 2500
     });
+
   }
   
   

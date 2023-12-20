@@ -312,3 +312,6 @@ td{
     right: 0;
     padding: 1rem;
   }
+  .selectFavorito{
+    color: yellow !important;
+  }
