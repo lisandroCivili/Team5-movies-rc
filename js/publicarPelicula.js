@@ -21,8 +21,9 @@ export const mostrarPelicula = (peliculas) => {
                 const imgDrama = document.createElement("img");
                 imgDrama.src = `img/portadas/${peliculas.url}`;
                 imgDrama.classList.add("imgCarrusel");
+                aDrama.classList.add(peliculas.id);
                 aDrama.appendChild(imgDrama);
-                catDrama.prepend(aDrama);
+                catDrama.prepend(aDrama);   
 
                 break;
             case "Accion":
@@ -30,6 +31,7 @@ export const mostrarPelicula = (peliculas) => {
                 const imgAccion = document.createElement("img");
                 imgAccion.src = `img/portadas/${peliculas.url}`;
                 imgAccion.classList.add("imgCarrusel");
+                aAccion.classList.add(peliculas.id);
                 aAccion.appendChild(imgAccion);
                 catAccion.prepend(aAccion);
 
@@ -39,6 +41,7 @@ export const mostrarPelicula = (peliculas) => {
                 const imgComedia = document.createElement("img");
                 imgComedia.src = `img/portadas/${peliculas.url}`;
                 imgComedia.classList.add("imgCarrusel");
+                aComedia.classList.add(peliculas.id);
                 aComedia.appendChild(imgComedia);
                 catComedia.prepend(aComedia);
 
@@ -48,6 +51,7 @@ export const mostrarPelicula = (peliculas) => {
                 const imgFiccion = document.createElement("img");
                 imgFiccion.src = `img/portadas/${peliculas.url}`;
                 imgFiccion.classList.add("imgCarrusel");
+                aFiccion.classList.add(peliculas.id);
                 aFiccion.appendChild(imgFiccion);
                 catCiFi.prepend(aFiccion);
 
@@ -57,6 +61,7 @@ export const mostrarPelicula = (peliculas) => {
                 const imgThriller = document.createElement("img");
                 imgThriller.src = `img/portadas/${peliculas.url}`;
                 imgThriller.classList.add("imgCarrusel");
+                aThriller.classList.add(peliculas.id);
                 aThriller.appendChild(imgThriller);
                 catThriller.prepend(aThriller);
 
