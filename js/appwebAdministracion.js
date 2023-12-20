@@ -66,6 +66,7 @@ const dibujarFila = (Pelicula, numeroFila) => {
   <td>
     <button class="btn btn-primary" onclick="detallePelicula('${Pelicula.id}')"><i class="bi bi-star-fill"></i></button>
     <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" ><i class="bi bi-pencil-square"></i></button>
+
     <button class="btn btn-danger" onclick="borrarPelicula('${Pelicula.id}')"><i class="bi bi-trash-fill"></i></button>
   </td>
 </tr>`;
@@ -98,7 +99,7 @@ window.borrarPelicula = (idPelicula) => {
   imagenPelicula.innerHTML = "";
   cargaInicial();
 };
-
+/**************esta parte estaba vinculada al boton de favorito**********/
 window.detallePelicula = (idPelicula) => {
   console.log(window.location);
   window.location.href =
@@ -120,3 +121,28 @@ const validarCantidadCaracteres = (texto, min, max) => {
 formularioPelicula.addEventListener("submit", crearPelicula);
 
 cargaInicial();
+
+
+window.favoritoPelicula = (idPelicula) => {
+  const botones = document.querySelectorAll('.btn-favorito');
+  botones.forEach(boton =>{
+    if (boton.id===idPelicula){
+      boton.classList.add('selectFavorito');
+      const peliculas = JSON.parse(localStorage.getItem('catalogoKey'));
+      const encontrada = peliculas.find(pelicula => pelicula.id === idPelicula);
+      if (encontrada){
+        
+        const titulo = document.querySelector('#nombreFavorito');
+        const descrip = document.querySelector('#resumenImgDestacada');
+        const img = document.querySelector('#imgPeliculaDestacada');
+        titulo.textContent = encontrada.nombre;
+        descrip.textContent = encontrada.descripcion;
+        img.src = `../img/portadas/${encontrada.url}`;
+
+      }
+
+    }else{
+      boton.classList.remove('selectFavorito');
+    }
+  })
+}
