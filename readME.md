@@ -31,7 +31,7 @@ Contribuciones
 ¡Apreciamos las contribuciones para mejorar esta página de películas! Si deseas contribuir, asegúrate de seguir las pautas de contribución y enviar pull requests para su revisión.
 
 ## Demo
-Agregar el link, envolver el texto entre corchetes y el link entre parentesis (lo que quede aqui no serà visible)
+[rollingmovies5.netlify.app](rollingmovies5.netlify.app)
 
 ## Contacto
 Si tienes preguntas, sugerencias o simplemente quieres saludar, no dudes en ponerte en contacto con alguno de los miembros del equipo:
