@@ -78,11 +78,13 @@ formLogin.addEventListener('submit',(e)=>{
   const usuarios = JSON.parse(localStorage.getItem('usuarioNuevoKey'));
   console.log(usuarios);
   console.log(formLogin.password.value);
+
   const encontrado = usuarios.find(usuario => usuario.contrasena === formLogin.password.value && usuario.usuario===formLogin.usuario.value);
+  const usuarioAdmin = usuarios.find(usuario => usuario.contrasena === "Adminrolling23" && usuario.usuario==="admin23");
  
   if (encontrado) {
     console.log('Objeto encontrado:', encontrado.nombre);
-    validar.borrarForm(formLogin);  
+    validar.borrarForm(formLogin); 
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -90,6 +92,20 @@ formLogin.addEventListener('submit',(e)=>{
       showConfirmButton: false,
       timer: 2500
     });
+    if (usuarioAdmin) {
+    
+      const navbar = document.getElementById("opcionesMenu");
+      const opcionLi = document.createElement("li");
+      opcionLi.classList.add("nav-item");
+      const opcionA = document.createElement("a");
+      opcionA.classList.add("nav-link", "p-2",  "my-1", "fw-medium", "opcionesNav");
+      opcionA.href = "./pages/webAdministracion.html";
+      opcionA.innerHTML = "Admin";
+      opcionLi.appendChild(opcionA);
+      navbar.appendChild(opcionLi);
+      console.log("viejooo")
+  
+    }
   } else {
     console.log('No se encontró el objeto');
     Swal.fire({
