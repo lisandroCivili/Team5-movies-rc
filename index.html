@@ -42,7 +42,6 @@
               <div class="modal-content">
 
 
-                        <!-- AGREGAR INDICACIONES DE MINIMOS Y MAXIMOS DE INPUTS AL USUARIO -->
 
                 <form id="registroForm">
                   <div class="modal-header">
@@ -51,34 +50,35 @@
                   </div>
                   <div class="modal-body">
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="nombre"  placeholder="Nombre y apellido">
+                      <input type="text" class="form-control" id="nombre" minlength="3" maxlength="35" placeholder="Nombre y apellido" required>
                       <label for="nombre">Nombres</label>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="apellido"  placeholder="Nombre y apellido">
+                      <input type="text" class="form-control" id="apellido" minlength="3" maxlength="35"  placeholder="Nombre y apellido" required>
                       <label for="apellido">Apellidos</label>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="usuario"  placeholder="Nombre de usuario">
+                      <input type="text" class="form-control" id="usuario" minlength="5" maxlength="10"  placeholder="Nombre de usuario" required>
                       <label for="usuario">Nombre de usuario</label>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="correo"  placeholder="nombre@ejemplo.com">
+                      <input type="email" class="form-control" id="correo"  placeholder="nombre@ejemplo.com" required>
                       <label for="correo">Email</label>
                     </div>
                     <div class="form-floating">
-                      <input type="password" class="form-control" id="contrasena"  placeholder="Contraseña">
+                      <input type="password" class="form-control" id="contrasena" minlength="8" maxlength="16"   placeholder="Contraseña" required>
                       <label for="contrasena">Contraseña</label>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="repetirContrasena"  placeholder="Contraseña">
+                      <input type="password" class="form-control" id="repetirContrasena" minlength="8" maxlength="16"  placeholder="Contraseña" required>
                       <label for="repetirContrasena">Repetir contraseña</label>
+                      <span>Minimo 8 caracteres, una mayuscula y un caracter especial</span>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control" id="fechaNac"  placeholder="Contraseña">
+                      <input type="date" class="form-control" id="fechaNac"  placeholder="Contraseña" required>
                       <label for="fechaNac">Fecha de nacimiento</label>
                     </div>
-                    <select id="genero" class="form-select" aria-label="Default select" >
+                    <select id="genero" class="form-select" aria-label="Default select"  required>
                       <option selected>Género:</option>
                       <option value="Femenino">Femenino</option>
                       <option value="Masculino">Masculino</option>
@@ -114,10 +114,10 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="#">Nosotros</a>
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="./pages/nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="./pages/webAdministracion.html">Contacto</a>
+                <a class="nav-link p-2 my-1 fw-medium opcionesNav" href="./pages/contacto.html">Contacto</a>
               </li>
             </ul>
           </div>
@@ -193,7 +193,7 @@
           />
         </div>
         <div id="textoImgDestacada">
-          <h1 class="titulos text-end text-white m-0">INTERESTELLAR</h1>
+          <h1 class="titulos text-end text-white m-0" id="nombreFavorito">INTERESTELLAR</h1>
           <h4 id="tendencias" class="text-end text-white"><i class="bi bi-arrow-up-circle-fill"></i> N° 1 en tendencias hoy</h4>
           <p id="resumenImgDestacada" class="text-end text-white">
             Sigue a astronautas en busca de un nuevo hogar para la humanidad
@@ -202,8 +202,8 @@
             visuales impresionantes y temas emocionales.
           </p>
           <div class="text-lg-end">
-              <button type="button" id="reproducirDestacada" class="btn btn btn-outline-light"><i class="bi bi-badge-hd-fill"></i> Reproducir</button>
-              <button type="button" id="informacionDestacada" class="btn btn btn-outline-light">Mas información</button>
+              <a type="button" id="reproducirDestacada" class="btn btn btn-outline-light" href="./pages/error404.html"><i class="bi bi-badge-hd-fill"></i> Reproducir</a>
+              <a type="button" id="informacionDestacada" class="btn btn btn-outline-light" href="./pages/error404.html">Mas información</a>
           </div>
         </div>
       </section>
