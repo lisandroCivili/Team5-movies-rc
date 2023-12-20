@@ -38,8 +38,8 @@ Si tienes preguntas, sugerencias o simplemente quieres saludar, no dudes en pone
 
 - Lisandro Civili de la Vega: [lisandrocivili13@gmail.com]
 - Fernando Gastón Figueroa: [feroa88@gmail.com]
-Valentina Fuentes: [fuentesvalentina74@gmail.com]
-Elias Gustavo Vargas: [correo electrónico]
-Joaquin Vazquez Garcia: [correo electrónico]
+- Valentina Fuentes: [fuentesvalentina74@gmail.com]
+- Elias Gustavo Vargas: [correo electrónico]
+- Joaquin Vazquez Garcia: [correo electrónico]
 
 ¡Gracias por tu interés en nuestro proyecto de página de películas!
